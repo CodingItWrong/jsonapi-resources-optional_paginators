@@ -2,6 +2,8 @@
 
 JSONAPI::Resources paginators that allow returning records unpaginated.
 
+JSONAPI::Resources allows you to configure resources to either have no pagination, or to have a paginator of a certain type. This often works fine. But sometimes you may want the option to either paginate or not paginate a resource, depending on the request.
+
 ## Installation
 
 Add this line to your application's Gemfile:
