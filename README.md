@@ -1,6 +1,6 @@
-# Jsonapi::Resources::OptionalPaginators
+# JSONAPI::Resources::OptionalPaginators
 
-JR paginators that allow returning records unpaginated.
+JSONAPI::Resources paginators that allow returning records unpaginated.
 
 ## Installation
 
