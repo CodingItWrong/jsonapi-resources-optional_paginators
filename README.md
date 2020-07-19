@@ -1,8 +1,6 @@
 # Jsonapi::Resources::OptionalPaginators
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/jsonapi/resources/optional_paginators`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+JR paginators that allow returning records unpaginated.
 
 ## Installation
 
