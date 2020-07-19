@@ -1,4 +1,4 @@
-require "jsonapi/resources/optional_paginators/version"
+require 'jsonapi/resources/optional_paginators/version'
 
 module Jsonapi
   module Resources
