@@ -34,7 +34,8 @@ To use the `OptionalPagedPaginator`, configure it as the paginator for a resourc
     
 To make another paginator class optional, call the `OptionalPaginator.for` method, passing the paginator class to wrap. It returns a new class, so assign it to a constant:
 
-    OptionalOffsetPaginator = JSONAPI::Resources::OptionalPaginators::OptionalPaginator.for(OffsetPaginator)
+    OptionalOffsetPaginator =
+          JSONAPI::Resources::OptionalPaginators::OptionalPaginator.for(OffsetPaginator)
     
 Note that the class should not be nested inside a module, so that JR can find the class name based on the symbol passed to the config:
 
