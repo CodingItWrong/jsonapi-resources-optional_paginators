@@ -1,6 +1,6 @@
 require 'jsonapi/resources/optional_paginators/version'
 
-module Jsonapi
+module JSONAPI
   module Resources
     module OptionalPaginators
       class Error < StandardError; end
