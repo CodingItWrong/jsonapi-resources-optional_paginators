@@ -2,7 +2,11 @@
 
 JSONAPI::Resources paginators that allow returning records unpaginated.
 
-JSONAPI::Resources allows you to configure resources to either have no pagination, or to have a paginator of a certain type. This often works fine. But sometimes you may want the option to either paginate or not paginate a resource, depending on the request.
+JSONAPI::Resources allows you to configure resources to either have no pagination, or to have a paginator of a certain type. This often works fine. 
+
+But sometimes you may want the option to either paginate or not paginate a resource, depending on the request. For example, in a todo list app, your completed todo list will get longer over time, so you might want to paginate it. But your uncompleted todo list should stay short, so you might want to retrieve all incomplete todos unpaginated.
+
+This gem allows you to make JR paginators optional, so that if you don't pass any `page[]` parameters, all records are returned. This is accomplished with an `OptionalPaginator` class that wraps any other paginator. For convenience, a wrapped version of the built-in `PagedPaginator` is provided as `OptionalPagedPaginator`.
 
 ## Installation
 
@@ -22,7 +26,21 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To use the `OptionalPagedPaginator`, configure it as the paginator for a resource or the default paginator for the app:
+
+    JSONAPI.configure do |config|
+      config.default_paginator = :optional_paged
+    end
+    
+To make another paginator class optional, call the `OptionalPaginator.for` method, passing the paginator class to wrap. It returns a new class, so assign it to a constant:
+
+    OptionalOffsetPaginator = JSONAPI::Resources::OptionalPaginators::OptionalPaginator.for(OffsetPaginator)
+    
+Note that the class should not be nested inside a module, so that JR can find the class name based on the symbol passed to the config:
+
+    JSONAPI.configure do |config|
+      config.default_paginator = :optional_offset
+    end
 
 ## Development
 
